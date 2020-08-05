@@ -7,14 +7,14 @@ from django.shortcuts import render
 from TrackActivity import models
 from TrackActivity import serializers
 
-# Create your views here.
+# Get list of all users : "trackativity/user/all"
 class GetUsers(APIView):
 
 	def get(self, request):
 		all_users = models.AppUser.objects.all()
 		members = []
 		for user in all_users:
-			members.push(serializers.RayUserSignupSerializer(AppUserSerializer).data)
+			members.append(serializers.AppUserSerializer(user).data)
 
 		return Response({"ok":"true","members":members})
 

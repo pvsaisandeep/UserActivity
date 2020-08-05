@@ -25,7 +25,7 @@ class AppUserSerializer(serializers.ModelSerializer):
     	return obj.time_zone
 
     def get_activity_periods(self, obj):
-    	user_activity = models.ActivityPeriod.filter(user=obj)
+    	user_activity = models.ActivityPeriod.objects.filter(user=obj)
     	serialized_device_data = ActivityPeriodSerializer(user_activity, many=True)
     	return serialized_device_data.data
 
