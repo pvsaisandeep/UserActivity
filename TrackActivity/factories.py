@@ -18,13 +18,3 @@ class AppUserFactory(DjangoModelFactory):
         model = AppUser
 
     user = factory.SubFactory(UserFactory)
-
-# class UserFactory(DjangoModelFactory):  
-#     class Meta:
-#         model = User
-
-#     username = factory.Faker('username')
-#     password = factory.Faker('password')
-#     first_name = factory.Faker('first_name')
-#     last_name = factory.Faker('last_name')
-#     email = factory.Faker('email')
